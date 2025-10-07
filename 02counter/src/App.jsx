@@ -1,16 +1,21 @@
+import React from 'react'
+import { useState } from 'react';
 function App() {
-  let counter=0;
-  const addvalue=()=>{
-    counter++;
-    console.log("hello");
-  }
+ 
+  let [counter,setCounter]=useState(0);
+
   return (
     <>
-   <h1>couter Project</h1>
-   <h2>counter value: {counter}</h2>
-   <button id='btn1' onClick={addvalue} type="submit">counter++</button>
-   <button id='btn2' type="submit">counter--</button>
-   </>
+    <h1>counter Project</h1>
+    <h2>value id : {counter}</h2>
+    <h3>{counter}</h3>
+    <button type="submit" onClick={()=>{
+    if(counter<20) setCounter(counter+1);
+  }}>Increment</button>
+    <button type="submit"onClick={()=>{
+    if(counter>0) setCounter(counter-1);
+  }}>Decrement</button>
+    </>
   )
 }
 
